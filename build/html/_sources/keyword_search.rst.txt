@@ -1,0 +1,7 @@
+keyword_search module
+=====================
+
+.. automodule:: search.keyword_search
+    :members:
+    :undoc-members:
+    :show-inheritance:

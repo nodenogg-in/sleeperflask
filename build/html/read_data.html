@@ -1,0 +1,167 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>read_data module &#8212; sleeper-tools 1.1.8 documentation</title>
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/language_data.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="keyword_search module" href="keyword_search.html" />
+    <link rel="prev" title="Welcome to sleeper-tools’s documentation!" href="index.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="module-data_loader.read_data">
+<span id="read-data-module"></span><h1>read_data module<a class="headerlink" href="#module-data_loader.read_data" title="Permalink to this headline">¶</a></h1>
+<p>Created on Sun May 21 15:45:19 2023</p>
+<p>&#64;author: atr1n17</p>
+<dl class="function">
+<dt id="data_loader.read_data.load_corpus_text">
+<code class="sig-prename descclassname">data_loader.read_data.</code><code class="sig-name descname">load_corpus_text</code><span class="sig-paren">(</span><em class="sig-param">corpus_path</em><span class="sig-paren">)</span><a class="headerlink" href="#data_loader.read_data.load_corpus_text" title="Permalink to this definition">¶</a></dt>
+<dd><p>Load text files from a directory and split them into sentences.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>corpus_path</strong> – The path of the directory containing the text files.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>A list of sentences, where each sentence is a list of words.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="data_loader.read_data.read_corpus">
+<code class="sig-prename descclassname">data_loader.read_data.</code><code class="sig-name descname">read_corpus</code><span class="sig-paren">(</span><em class="sig-param">corpus_path</em><span class="sig-paren">)</span><a class="headerlink" href="#data_loader.read_data.read_corpus" title="Permalink to this definition">¶</a></dt>
+<dd><p>Read documents from the specified corpus path and return a list of documents.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>corpus_path</strong> (<em>str</em>) – Path to the folder containing the corpus documents.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>A list of dictionaries where each dictionary represents a document with its name and text.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>list</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="data_loader.read_data.read_notes">
+<code class="sig-prename descclassname">data_loader.read_data.</code><code class="sig-name descname">read_notes</code><span class="sig-paren">(</span><em class="sig-param">notes_path</em><span class="sig-paren">)</span><a class="headerlink" href="#data_loader.read_data.read_notes" title="Permalink to this definition">¶</a></dt>
+<dd><p>Read notes from the specified notes path and return a dict of all notes.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>notes_path</strong> (<em>str</em>) – Path to the folder containing the notes.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>A dict of where filenames are keys and values are strings with the notes.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="index.html">sleeper-tools</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">read_data module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="keyword_search.html">keyword_search module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lm.html">lm module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="rnn.html">rnn module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="markov_chain.html">markov_chain module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tfidf_search.html">tfidf_search module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pdf2txt.html">pdf2text module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="preprocessor.html">preprocessor module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="demo.html">demo script</a></li>
+<li class="toctree-l1"><a class="reference internal" href="haiku.html">haiku script</a></li>
+<li class="toctree-l1"><a class="reference internal" href="word_arithmetic.html">word_arithmetic module</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+      <li>Previous: <a href="index.html" title="previous chapter">Welcome to sleeper-tools’s documentation!</a></li>
+      <li>Next: <a href="keyword_search.html" title="next chapter">keyword_search module</a></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 2.4.0</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="_sources/read_data.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

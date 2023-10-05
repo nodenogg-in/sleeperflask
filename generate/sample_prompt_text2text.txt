@@ -1,0 +1,12 @@
+Write a story using words from the following text?
+
+Text:Like film, which uses dramatic storytelling, visual composition, sound design, and the complex dynamic organizational process of editing in the construction of a single work, the field of game design has its own unique aesthetic.
+or Games are X ("Games are an interactive storytelling medium.
+It would be strange for us to say, for example, that poetry is storytelling.
+Although storytelling is one way of understanding poetry, it is just one of many possible perspectives.
+We look at games as storytelling systems.
+The outcome of the storytelling action depends on the other players and their own voting actions.
+Conversely, there are RPGs that de-emphasize power, statistics, and advancement and instead focus on storytelling and narrative.This form of RPG seems very unlike games as we have defined them.
+storytelling, visual aesthetics, social interaction, new technologies—or even new kinds of formal rules.
+In the next chapter on simulation, we zoom back in to investigate the more atomic structures of games as representational systems, linking together signification, simulation, and storytelling.
+Discussions of games as "interactive narratives" predictably fall into polarizing debates about linear vs. non-linear storytelling, of games as stories or stories as games.

@@ -1,0 +1,7 @@
+markov_chain module
+===================
+
+.. automodule:: generate.markov_chain
+    :members:
+    :undoc-members:
+    :show-inheritance:

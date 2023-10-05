@@ -1,0 +1,173 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>haiku script &#8212; sleeper-tools 1.1.8 documentation</title>
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/language_data.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="word_arithmetic module" href="word_arithmetic.html" />
+    <link rel="prev" title="demo script" href="demo.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="module-haiku">
+<span id="haiku-script"></span><h1>haiku script<a class="headerlink" href="#module-haiku" title="Permalink to this headline">¶</a></h1>
+<dl class="function">
+<dt id="haiku.count_syllables">
+<code class="sig-prename descclassname">haiku.</code><code class="sig-name descname">count_syllables</code><span class="sig-paren">(</span><em class="sig-param">word</em><span class="sig-paren">)</span><a class="headerlink" href="#haiku.count_syllables" title="Permalink to this definition">¶</a></dt>
+<dd><p>Function to count syllables in a word using the CMU dictionary.
+If word is not found in dictionary, use syllable_count_for_unknown_word.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="haiku.generate_line_from_extracts">
+<code class="sig-prename descclassname">haiku.</code><code class="sig-name descname">generate_line_from_extracts</code><span class="sig-paren">(</span><em class="sig-param">extracts</em>, <em class="sig-param">num_syllables</em><span class="sig-paren">)</span><a class="headerlink" href="#haiku.generate_line_from_extracts" title="Permalink to this definition">¶</a></dt>
+<dd><p>Function to generate prompt for user input</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="haiku.generate_line_from_lm">
+<code class="sig-prename descclassname">haiku.</code><code class="sig-name descname">generate_line_from_lm</code><span class="sig-paren">(</span><em class="sig-param">prompt</em>, <em class="sig-param">model</em>, <em class="sig-param">tokenizer</em>, <em class="sig-param">extracts</em>, <em class="sig-param">num_syllables</em><span class="sig-paren">)</span><a class="headerlink" href="#haiku.generate_line_from_lm" title="Permalink to this definition">¶</a></dt>
+<dd><p>Function to generate text based on a given prompt</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="haiku.get_words_for_first_n_syllables">
+<code class="sig-prename descclassname">haiku.</code><code class="sig-name descname">get_words_for_first_n_syllables</code><span class="sig-paren">(</span><em class="sig-param">text</em>, <em class="sig-param">n</em><span class="sig-paren">)</span><a class="headerlink" href="#haiku.get_words_for_first_n_syllables" title="Permalink to this definition">¶</a></dt>
+<dd><p>Function to extract words adding up to a specific number of syllables from the beginning of a text.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="haiku.get_words_for_last_n_syllables">
+<code class="sig-prename descclassname">haiku.</code><code class="sig-name descname">get_words_for_last_n_syllables</code><span class="sig-paren">(</span><em class="sig-param">text</em>, <em class="sig-param">n</em><span class="sig-paren">)</span><a class="headerlink" href="#haiku.get_words_for_last_n_syllables" title="Permalink to this definition">¶</a></dt>
+<dd><p>Function to extract words adding up to a specific number of syllables from the end of a text.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="haiku.main">
+<code class="sig-prename descclassname">haiku.</code><code class="sig-name descname">main</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#haiku.main" title="Permalink to this definition">¶</a></dt>
+<dd><p>Main function to load data, models and generate output based on user inputs.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="haiku.random_split">
+<code class="sig-prename descclassname">haiku.</code><code class="sig-name descname">random_split</code><span class="sig-paren">(</span><em class="sig-param">sentence</em><span class="sig-paren">)</span><a class="headerlink" href="#haiku.random_split" title="Permalink to this definition">¶</a></dt>
+<dd><p>Function to split a sentence at a random index.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="haiku.syllable_count_oov">
+<code class="sig-prename descclassname">haiku.</code><code class="sig-name descname">syllable_count_oov</code><span class="sig-paren">(</span><em class="sig-param">word</em><span class="sig-paren">)</span><a class="headerlink" href="#haiku.syllable_count_oov" title="Permalink to this definition">¶</a></dt>
+<dd><p>Function to estimate syllable count for a word not found in CMU dictionary.
+This is a simple rule-based approach that won’t be perfect.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="haiku.trim">
+<code class="sig-prename descclassname">haiku.</code><code class="sig-name descname">trim</code><span class="sig-paren">(</span><em class="sig-param">s1</em>, <em class="sig-param">s2</em><span class="sig-paren">)</span><a class="headerlink" href="#haiku.trim" title="Permalink to this definition">¶</a></dt>
+<dd><p>Removes any overlap from the beginning of the second string.</p>
+</dd></dl>
+
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="index.html">sleeper-tools</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="read_data.html">read_data module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="keyword_search.html">keyword_search module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lm.html">lm module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="rnn.html">rnn module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="markov_chain.html">markov_chain module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tfidf_search.html">tfidf_search module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pdf2txt.html">pdf2text module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="preprocessor.html">preprocessor module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="demo.html">demo script</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">haiku script</a></li>
+<li class="toctree-l1"><a class="reference internal" href="word_arithmetic.html">word_arithmetic module</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+      <li>Previous: <a href="demo.html" title="previous chapter">demo script</a></li>
+      <li>Next: <a href="word_arithmetic.html" title="next chapter">word_arithmetic module</a></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 2.4.0</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="_sources/haiku.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

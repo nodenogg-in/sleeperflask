@@ -1,0 +1,214 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>markov_chain module &#8212; sleeper-tools 1.1.8 documentation</title>
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/language_data.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="tfidf_search module" href="tfidf_search.html" />
+    <link rel="prev" title="rnn module" href="rnn.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="module-generate.markov_chain">
+<span id="markov-chain-module"></span><h1>markov_chain module<a class="headerlink" href="#module-generate.markov_chain" title="Permalink to this headline">¶</a></h1>
+<p>This script uses Markov Chains to generate text based on a set of input text files.</p>
+<dl class="simple">
+<dt>RUN:</dt><dd><p>pip3 install -r requirements.txt
+python markov_chain.py  &lt;corpus_path&gt; &lt;notes_path&gt; &lt;length&gt; [–context_size &lt;context_window&gt;]</p>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">param corpus_path</dt>
+<dd class="field-odd"><p>Path to the readinglist folder containing the corpus.</p>
+</dd>
+<dt class="field-even">type corpus_path</dt>
+<dd class="field-even"><p>str</p>
+</dd>
+<dt class="field-odd">param notes_path</dt>
+<dd class="field-odd"><p>Path to the notes folder containing the notes.</p>
+</dd>
+<dt class="field-even">type notes_path</dt>
+<dd class="field-even"><p>str</p>
+</dd>
+<dt class="field-odd">param length</dt>
+<dd class="field-odd"><p>Length of text to be generated.</p>
+</dd>
+<dt class="field-even">type length</dt>
+<dd class="field-even"><p>int</p>
+</dd>
+<dt class="field-odd">param –context_size</dt>
+<dd class="field-odd"><p>Optional. Size of the context window for the Markov chain. Defaults to 1.</p>
+</dd>
+<dt class="field-even">type –context_size</dt>
+<dd class="field-even"><p>int</p>
+</dd>
+</dl>
+<p class="rubric">Example</p>
+<p>python markov_chain.py corpus_folder/ notes_folder/ 100 –context_size 2</p>
+<dl class="function">
+<dt id="generate.markov_chain.generate_chain">
+<code class="sig-prename descclassname">generate.markov_chain.</code><code class="sig-name descname">generate_chain</code><span class="sig-paren">(</span><em class="sig-param">text</em>, <em class="sig-param">order=1</em><span class="sig-paren">)</span><a class="headerlink" href="#generate.markov_chain.generate_chain" title="Permalink to this definition">¶</a></dt>
+<dd><p>Function to generate a Markov chain from given text.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>text</strong> (<em>str</em>) – Input text to generate the Markov chain.</p></li>
+<li><p><strong>order</strong> (<em>int</em><em>, </em><em>optional</em>) – Order of the Markov chain. Defaults to 1.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>A dictionary representing the Markov chain.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>chain (dict)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="generate.markov_chain.generate_text">
+<code class="sig-prename descclassname">generate.markov_chain.</code><code class="sig-name descname">generate_text</code><span class="sig-paren">(</span><em class="sig-param">chain</em>, <em class="sig-param">length=10</em>, <em class="sig-param">seed=None</em><span class="sig-paren">)</span><a class="headerlink" href="#generate.markov_chain.generate_text" title="Permalink to this definition">¶</a></dt>
+<dd><p>Function to generate text from a Markov chain.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>chain</strong> (<em>dict</em>) – The Markov chain to use for text generation.</p></li>
+<li><p><strong>length</strong> (<em>int</em><em>, </em><em>optional</em>) – The length of the text to be generated. Defaults to 10.</p></li>
+<li><p><strong>seed</strong> (<em>str</em><em>, </em><em>optional</em>) – Initial seed for the Markov chain. Defaults to None.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>A string of generated text.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="generate.markov_chain.main">
+<code class="sig-prename descclassname">generate.markov_chain.</code><code class="sig-name descname">main</code><span class="sig-paren">(</span><em class="sig-param">notes</em>, <em class="sig-param">corpus</em>, <em class="sig-param">gen_length</em>, <em class="sig-param">context_window</em><span class="sig-paren">)</span><a class="headerlink" href="#generate.markov_chain.main" title="Permalink to this definition">¶</a></dt>
+<dd><p>Main function for generating text with a Markov chain using keywords words from notes.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>notes</strong> (<em>list of dicts</em>) – Notes to extracts keywords from.</p></li>
+<li><p><strong>corpus</strong> (<em>list of dicts</em>) – Corpus to build the Markov chain from.</p></li>
+<li><p><strong>gen_length</strong> (<em>int</em>) – Length of text to be generated.</p></li>
+<li><p><strong>context_window</strong> (<em>int</em>) – The order (context size) of the Markov chain.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>A string of generated text.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="index.html">sleeper-tools</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="read_data.html">read_data module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="keyword_search.html">keyword_search module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lm.html">lm module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="rnn.html">rnn module</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">markov_chain module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tfidf_search.html">tfidf_search module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pdf2txt.html">pdf2text module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="preprocessor.html">preprocessor module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="demo.html">demo script</a></li>
+<li class="toctree-l1"><a class="reference internal" href="haiku.html">haiku script</a></li>
+<li class="toctree-l1"><a class="reference internal" href="word_arithmetic.html">word_arithmetic module</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+      <li>Previous: <a href="rnn.html" title="previous chapter">rnn module</a></li>
+      <li>Next: <a href="tfidf_search.html" title="next chapter">tfidf_search module</a></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 2.4.0</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="_sources/markov_chain.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

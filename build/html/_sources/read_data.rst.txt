@@ -1,0 +1,7 @@
+read_data module
+================
+
+.. automodule:: data_loader.read_data
+    :members:
+    :undoc-members:
+    :show-inheritance:

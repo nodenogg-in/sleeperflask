@@ -1,1 +1,11 @@
-Flask
+torch
+scikit-learn
+pandas
+nltk
+PyPDF2
+transformers
+keras
+tensorflow
+flask
+flask-cors
+gensim

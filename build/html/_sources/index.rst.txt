@@ -1,0 +1,33 @@
+.. sleeper-tools documentation master file, created by
+   sphinx-quickstart on Sat Jun  3 19:25:16 2023.
+   You can adapt this file completely to your liking, but it should at least
+   contain the root `toctree` directive.
+
+Welcome to sleeper-tools's documentation!
+=========================================
+
+.. toctree::
+   :maxdepth: 2
+
+   read_data
+   keyword_search
+   lm
+   rnn
+   markov_chain
+   tfidf_search
+   pdf2txt
+   preprocessor
+   demo
+   haiku
+   word_arithmetic
+
+
+
+
+
+Indices and tables
+==================
+
+* :ref:`genindex`
+* :ref:`modindex`
+* :ref:`search`

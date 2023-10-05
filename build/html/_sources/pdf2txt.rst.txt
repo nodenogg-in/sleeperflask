@@ -1,0 +1,7 @@
+pdf2text module
+===============
+
+.. automodule:: text_extractors.pdf2text
+    :members:
+    :undoc-members:
+    :show-inheritance:

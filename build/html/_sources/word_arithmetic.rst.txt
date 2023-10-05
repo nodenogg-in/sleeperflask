@@ -1,0 +1,21 @@
+word_arithmetic module
+======================
+
+.. automodule:: word_arithmetic
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+
+When run as a script, this module accepts the following command-line arguments:
+
+* ``--data_path``: Path to the directory containing the text files.
+* ``--save_path``: Path to save the trained model (optional).
+* ``--load_path``: Path to load the pre-trained model (optional).
+* ``--operation``: Word arithmetic operation.
+
+Example:
+
+.. code-block:: bash
+
+    python word_arithmetic.py --data_path ./corpus --save_path ./model/word2vec_model --operation "king - man + woman"

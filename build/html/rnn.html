@@ -1,0 +1,271 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>rnn module &#8212; sleeper-tools 1.1.8 documentation</title>
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/language_data.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="markov_chain module" href="markov_chain.html" />
+    <link rel="prev" title="lm module" href="lm.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="module-generate.rnn">
+<span id="rnn-module"></span><h1>rnn module<a class="headerlink" href="#module-generate.rnn" title="Permalink to this headline">¶</a></h1>
+<dl class="simple">
+<dt>RUN:</dt><dd><p>pip install requirements.txt
+python rnn.py  &lt;readinglist_path&gt; &lt;notes_path&gt; &lt;save_model_path&gt; –diversity &lt;diversity&gt;</p>
+</dd>
+</dl>
+<dl class="function">
+<dt id="generate.rnn.build_model">
+<code class="sig-prename descclassname">generate.rnn.</code><code class="sig-name descname">build_model</code><span class="sig-paren">(</span><em class="sig-param">input_dim</em>, <em class="sig-param">max_len</em><span class="sig-paren">)</span><a class="headerlink" href="#generate.rnn.build_model" title="Permalink to this definition">¶</a></dt>
+<dd><p>Build the LSTM model.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>input_dim</strong> (<em>int</em>) – The size of the vocabulary.</p></li>
+<li><p><strong>max_len</strong> (<em>int</em>) – The length of the input sequences.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>The constructed LSTM model.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>Sequential</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="generate.rnn.create_vocab">
+<code class="sig-prename descclassname">generate.rnn.</code><code class="sig-name descname">create_vocab</code><span class="sig-paren">(</span><em class="sig-param">text</em><span class="sig-paren">)</span><a class="headerlink" href="#generate.rnn.create_vocab" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create a vocabulary from the text.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>text</strong> (<em>str</em>) – The text to process.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Two dictionaries, the first mapping words to integers and the second mapping integers to words.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>tuple</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="generate.rnn.generate_text">
+<code class="sig-prename descclassname">generate.rnn.</code><code class="sig-name descname">generate_text</code><span class="sig-paren">(</span><em class="sig-param">model</em>, <em class="sig-param">seed_sentence</em>, <em class="sig-param">diversity</em>, <em class="sig-param">word_to_int</em>, <em class="sig-param">vocab</em><span class="sig-paren">)</span><a class="headerlink" href="#generate.rnn.generate_text" title="Permalink to this definition">¶</a></dt>
+<dd><p>Generate text using the LSTM model.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>model</strong> (<em>Sequential</em>) – The LSTM model.</p></li>
+<li><p><strong>seed_sentence</strong> (<em>str</em>) – The sentence to start the generation with.</p></li>
+<li><p><strong>diversity</strong> (<em>float</em>) – The diversity of the generated text.</p></li>
+<li><p><strong>word_to_int</strong> (<em>dict</em>) – A dictionary mapping words to integers.</p></li>
+<li><p><strong>vocab</strong> (<em>list</em>) – The vocabulary mapping integers to words.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>String of generated text.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="generate.rnn.load_resources">
+<code class="sig-prename descclassname">generate.rnn.</code><code class="sig-name descname">load_resources</code><span class="sig-paren">(</span><em class="sig-param">load_path</em><span class="sig-paren">)</span><a class="headerlink" href="#generate.rnn.load_resources" title="Permalink to this definition">¶</a></dt>
+<dd><p>Load LSTM model and resources</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>load_path</strong> (<em>str</em>) – The path of the directory containing the trained model and related files.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>The loaded LSTM model, word_to_int dict and vocab dict</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>tuple</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="generate.rnn.main">
+<code class="sig-prename descclassname">generate.rnn.</code><code class="sig-name descname">main</code><span class="sig-paren">(</span><em class="sig-param">notes</em>, <em class="sig-param">corpus</em>, <em class="sig-param">model_path</em>, <em class="sig-param">diversity=1.2</em><span class="sig-paren">)</span><a class="headerlink" href="#generate.rnn.main" title="Permalink to this definition">¶</a></dt>
+<dd><p>Main function for generating text with an LSTM trained on the readinglist using keywords words from notes.</p>
+<p>Arguments:
+notes (list of dicts): Notes to extract keywords from.
+corpus (list of dicts): Corpus to build the Markov chain from.
+model_path (str): Path to load model from or save model to.
+diversity (float, optional): Diversity of text to be generated, default is 1.2</p>
+<p>Returns:
+str: A string of generated text.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="generate.rnn.prepare_data">
+<code class="sig-prename descclassname">generate.rnn.</code><code class="sig-name descname">prepare_data</code><span class="sig-paren">(</span><em class="sig-param">text</em>, <em class="sig-param">word_to_int</em>, <em class="sig-param">preprocess=False</em><span class="sig-paren">)</span><a class="headerlink" href="#generate.rnn.prepare_data" title="Permalink to this definition">¶</a></dt>
+<dd><p>Prepare the training and target data.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>text</strong> (<em>str</em>) – The text to process.</p></li>
+<li><p><strong>word_to_int</strong> (<em>dict</em>) – A dictionary mapping words to integers.</p></li>
+<li><p><strong>preprocess</strong> (<em>bool</em><em>, </em><em>optional</em>) – Indicates if the text should be preprocessed. Default is False.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Two numpy arrays, the first containing the training data and the second containing the target data.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>tuple</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="generate.rnn.save_resources">
+<code class="sig-prename descclassname">generate.rnn.</code><code class="sig-name descname">save_resources</code><span class="sig-paren">(</span><em class="sig-param">save_path</em>, <em class="sig-param">model</em>, <em class="sig-param">word_to_int</em>, <em class="sig-param">vocab</em><span class="sig-paren">)</span><a class="headerlink" href="#generate.rnn.save_resources" title="Permalink to this definition">¶</a></dt>
+<dd><p>Save LSTM model and resources</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>save_path</strong> (<em>str</em>) – The path of the directory to save the trained model and related files.</p></li>
+<li><p><strong>model</strong> (<em>Sequential</em>) – The LSTM model.</p></li>
+<li><p><strong>word_to_int</strong> (<em>dict</em>) – A dictionary mapping words to integers.</p></li>
+<li><p><strong>vocab</strong> (<em>list</em>) – The vocabulary mapping integers to words.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="generate.rnn.train">
+<code class="sig-prename descclassname">generate.rnn.</code><code class="sig-name descname">train</code><span class="sig-paren">(</span><em class="sig-param">data_path</em>, <em class="sig-param">save_path</em>, <em class="sig-param">epochs</em>, <em class="sig-param">preprocess=False</em><span class="sig-paren">)</span><a class="headerlink" href="#generate.rnn.train" title="Permalink to this definition">¶</a></dt>
+<dd><p>Train an LSTM model.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>data_path</strong> (<em>str</em>) – The path of the directory containing the text files.</p></li>
+<li><p><strong>save_path</strong> (<em>str</em>) – The path to save the trained model.</p></li>
+<li><p><strong>epochs</strong> (<em>int</em>) – The number of epochs to train the model.</p></li>
+<li><p><strong>preprocess</strong> (<em>bool</em><em>, </em><em>optional</em>) – Indicates if the text should be preprocessed. Default is False.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>The trained LSTM model, word_to_int dict and vocab dict</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>tuple</p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="index.html">sleeper-tools</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="read_data.html">read_data module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="keyword_search.html">keyword_search module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lm.html">lm module</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">rnn module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="markov_chain.html">markov_chain module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tfidf_search.html">tfidf_search module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pdf2txt.html">pdf2text module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="preprocessor.html">preprocessor module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="demo.html">demo script</a></li>
+<li class="toctree-l1"><a class="reference internal" href="haiku.html">haiku script</a></li>
+<li class="toctree-l1"><a class="reference internal" href="word_arithmetic.html">word_arithmetic module</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+      <li>Previous: <a href="lm.html" title="previous chapter">lm module</a></li>
+      <li>Next: <a href="markov_chain.html" title="next chapter">markov_chain module</a></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 2.4.0</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="_sources/rnn.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

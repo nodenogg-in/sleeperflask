@@ -1,0 +1,7 @@
+rnn module
+==========
+
+.. automodule:: generate.rnn
+    :members:
+    :undoc-members:
+    :show-inheritance:

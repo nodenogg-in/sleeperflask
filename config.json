@@ -1,0 +1,9 @@
+{
+"corpus_path":"/var/www/vhosts/adamprocter.co.uk/flask.adamprocter.co.uk/data/wsa-ref",
+"notes_path":"/var/www/vhosts/adamprocter.co.uk/flask.adamprocter.co.uk/data/json",
+"cache_path": "/var/www/vhosts/adamprocter.co.uk/flask.adamprocter.co.uk/sleeper-tools",
+"num_docs": "2",
+"num_keywords": "5",
+"search_model": "tfidf",
+"gen_model": "mk"
+}

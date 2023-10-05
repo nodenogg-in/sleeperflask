@@ -1,0 +1,7 @@
+lm module
+=========
+
+.. automodule:: generate.lm
+    :members:
+    :undoc-members:
+    :show-inheritance:
