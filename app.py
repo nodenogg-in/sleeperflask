@@ -62,6 +62,9 @@ def set_up():
     # w2v_model = None
     return results, model, tokenizer, w2v_model
 
+@app.route("/")
+def hello():
+    return "Hello Flask!"
 
 @app.route('/status', methods=['POST'])
 def status_endpoint(): 
