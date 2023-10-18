@@ -1,46 +1,48 @@
 # CHANGELOG
 
+Increased the capabilities of the azure resources to see if this helps with deployment.
+
 All notable changes to this project will be documented in this file.
 
 ## [1.1.3] - 17-03-2023
 
 ### Added
 
-    - optional command line arguments to specify number of top keywords and number of most similar documents to be searched for keywords. This is by default set to 5 and len(corpus) if no command line arguments are provided.
-    - unittests
-
+	- optional command line arguments to specify number of top keywords and number of most similar documents to be searched for keywords. This is by default set to 5 and len(corpus) if no command line arguments are provided.
+	- unittests
+	
 ### Changed
 
-    - readme contains instructions on how to run scripts
-    - tfidf_search script now supports reading into corpus from pdfs and txt files only
-
+	- readme contains instructions on how to run scripts
+	- tfidf_search script now supports reading into corpus from pdfs and txt files only
+	
 ### Fixed
 
-    - bug in search_documents where used corpus instead of documents
-    - bug in pagenumbers
-
+	- bug in search_documents where used corpus instead of documents
+	- bug in pagenumbers
+	
 ## [1.1.2] - 10-03-2023
 
 ### Unreleased
 
-    - edit readme with instructions on how run scripts
-
+	- edit readme with instructions on how run scripts
+	
 ### Added
 
-    - changelog for sematic versioning
-    - script to extract pdfs
-    - more comments for readability
-
+	- changelog for sematic versioning
+	- script to extract pdfs
+	- more comments for readability
+	
 ### Changed
 
-    - preprocessor now removes html tags as well
-    - tf-idf search now outputs a csv file with extracts and page numbers and document names of the doc where the keyword is present
-    - change variables names in script to reflect terminology used in team (corpus, documents, keywords, extracts)
-
+	- preprocessor now removes html tags as well
+	- tf-idf search now outputs a csv file with extracts and page numbers and document names of the doc where the keyword is present
+	- change variables names in script to reflect terminology used in team (corpus, documents, keywords, extracts)
+	
 ### Fixed
 
-    - Character encoding issues (ignore characters that are not utf-8)
-
+	- Character encoding issues (ignore characters that are not utf-8)
+	
 ## [1.1.1] - 03-03-2023
 
 ### Added
@@ -52,22 +54,22 @@ All notable changes to this project will be documented in this file.
 ### Unreleased
 
 	- Generate text using RNN
-
+	
 ### Added
 
 	- Generate text using markov chain
-
-### Changed
 	
-	- pdf2text now accepts either single files or folders
+### Changed
 
+	- pdf2text now accepts either single files or folders
+	
 ## [1.1.3] - 28-04-2023
 
 
 ### Added
 
 	- Generate text using RNN
-
+	
 	### Changed
 	
 	- markov chain script now takes a seed phrase as input for text generation
@@ -76,7 +78,7 @@ All notable changes to this project will be documented in this file.
 
 
 ### Changed
-	
+
 	- tfidf_search now accepts notes folder instead of json
 	
 ## [1.1.5] - 07-05-2023
